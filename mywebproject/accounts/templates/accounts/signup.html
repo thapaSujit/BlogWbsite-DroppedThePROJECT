@@ -8,7 +8,42 @@
   <h1>Signup</h1>
   <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Signup</button>
+    <div class="form-group">
+      <label for="{{ form.first_name.id_for_label }}">First Name<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your first name"></span></label>
+      <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <label for="{{ form.last_name.id_for_label }}">Last Name<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your last name"></span></label>
+      <input type="text" class="form-control" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" placeholder="Last Name" required>
+    </div>
+    <div class="form-group">
+      <label for="{{ form.email.id_for_label }}">Email<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your email address"></span></label>
+      <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Email Address" required>
+    </div>
+    <div class="form-group">
+      <label for="{{ form.address.id_for_label }}">Address<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your address"></span></label>
+      <input type="text" class="form-control" id="{{ form.address.id_for_label }}" name="{{ form.address.name }}" placeholder="Address">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.phone_number.id_for_label }}">Phone Number<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your phone number"></span></label>
+      <input type="text" class="form-control" id="{{ form.phone_number.id_for_label }}" name="{{ form.phone_number.name }}" placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.password1.id_for_label }}">Password<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Password should contain at least 8 characters, including upper and lower case letters, numbers, and symbols."></span></label>
+      <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+      <label for="{{ form.password2.id_for_label }}">Confirm Password<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your password again"></span></label>
+      <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" placeholder="Confirm Password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
   </form>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+    });
+  </script>
 {% endblock %}
