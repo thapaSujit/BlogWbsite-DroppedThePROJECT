@@ -1,20 +1,15 @@
 from django import forms
 from .models import Article
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
 class ArticleForm(forms.ModelForm):
+    # This is a Django form that inherits from forms.ModelForm
+    # It allows us to create a form that is automatically generated from a model
+
     class Meta:
         model = Article
+        # We are setting the model for this form to be the Article model
+        # This means that the fields in the form will be generated from the Article model
+
         fields = ['title', 'summary', 'body']
-
-class CustomUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=True, help_text='Required.')
-    last_name = forms.CharField(max_length=30, required=True, help_text='Required.')
-    email = forms.EmailField(max_length=254, required=True, help_text='Required. Enter a valid email address.')
-    address = forms.CharField(max_length=200, required=False)
-    phone_number = forms.CharField(max_length=20, required=False)
-
-    class Meta:
-        model = User
-        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email', 'address', 'phone_number')
+        # We are specifying which fields from the Article model we want to include in the form
+        # In this case, we want the title, summary, and body fields to be included

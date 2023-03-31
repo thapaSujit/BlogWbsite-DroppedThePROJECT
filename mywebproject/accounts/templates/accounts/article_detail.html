@@ -1,11 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <!-- This card layout displays the details of a single article -->
     <div class="card mb-3">
         <div class="card-body">
+            <!-- This card-title displays the title of the article -->
             <h5 class="card-title">{{ article.title }}</h5>
+            <!-- This card-subtitle displays the author and publication date of the article -->
             <h6 class="card-subtitle mb-2 text-muted">By {{ article.author }} on {{ article.date_posted|date:"F j, Y" }}</h6>
+            <!-- This card-text displays the body of the article -->
             <p class="card-text">{{ article.body }}</p>
         </div>
     </div>
 {% endblock %}
+
+<!-- 
+    card and card-body are classes from Bootstrap, a popular front-end framework. They are used to create a card layout for displaying the article details.
+
+    card-title and card-text are classes used to style the article title and body respectively.
+    
+    card-subtitle is used to display the author and publication date of the article.
+    
+     article.title displays the title of the article.
+    
+    article.author  displays the author of the article.
+    
+    article.date_posted|date:"F j, Y"  displays the publication date of the article in the format "Month day, Year" (e.g. January 1, 2023).
+    
+    article.body  displays the body of the article.
+ -->

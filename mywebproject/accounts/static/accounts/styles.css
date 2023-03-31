@@ -159,3 +159,40 @@ form button[type="submit"]:hover {
   display: block;
 }
 
+
+/* 
+Global styles:
+  body: sets the font family to Arial or a sans-serif font, and removes margins and padding.
+  h1, h2, h3: removes margin-top from headings.
+  ul: removes list-style, margin, and padding from unordered lists.
+  a: removes text decoration and sets the color to inherit from the parent element.
+Header styles:
+  header: sets the background color to #252525, text color to white, and padding to 10px.
+  header h1: removes margin from h1 element and sets the font size to 36px.
+Navigation styles:
+  nav: sets the background color to #333333, text color to white, and padding to 10px. The display is set to flex and uses justify-content and align-items to center and space the elements.
+  nav ul: sets the display to flex and uses justify-content and align-items to center the elements.
+  nav li: sets the margin to 0 10px.
+  nav form: sets the display to flex and uses justify-content and align-items to center the elements.
+  nav input[type="text"]: sets the padding to 5px, margin-right to 5px, border to none, border-radius to 5px, and no background color.
+  nav button[type="submit"]: sets the padding to 5px, border to none, border-radius to 5px, background color to #4CAF50, text color to white, and cursor to pointer.
+Main styles:
+  main: sets the padding to 20px and the display to flex with column direction.
+  section: sets the margin-bottom to 20px.
+  section h2: sets the font size to 24px.
+  section ul li: sets the margin-bottom to 10px.
+  section ul li h3: sets the margin-top to 0 and the font size to 20px.
+  section ul li p: sets the margin to 0.
+Footer styles:
+  footer: sets the background color to #252525, text color to white, and padding to 10px. The text is centered.
+Form styles:
+  form: sets the maximum width to 500px, margin to 0 auto, background color to #f8f8f8, border-radius to 5px, padding to 20px, and box-shadow to 0px 2px 10px rgba(0, 0, 0, 0.2).
+  form input[type="text"], form input[type="email"], form input[type="tel"], form input[type="password"]: sets the display to block, width to 100%, padding to 10px, margin-bottom to 15px, border to 1px solid #ccc, border-radius to 4px, and font size to 16px.
+  form label: sets the font weight to bold, display to block, and margin-bottom to 5px.
+  form button[type="submit"]: sets the background color to #4CAF50, text color to #fff, padding to 10px 20px, border to none, border-radius to 4px, cursor to pointer, and font size to 16px.
+  form button[type="submit"]:hover: sets the background color to #45a049 when the submit button is hovered. 
+  The width property is set to 400px, which means the form element will have a fixed width of 400px.
+  The margin property is set to 10px for the top and bottom, and auto for the left and right. This centers the form element horizontally within its container.
+  The display property is set to block, which means the form element will be displayed as a block-level element, taking up the full width of its container and starting on a new line.
+
+*/

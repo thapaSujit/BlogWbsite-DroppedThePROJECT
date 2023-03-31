@@ -12,3 +12,23 @@
     <button type="submit">Login</button>
   </form>
 {% endblock %}
+
+<!-- 
+  extends 'base.html' : This code extends the base.html template and inherits all the blocks defined in it.
+
+  block head  ...  endblock: This block is used to override the head block defined in the base.html template. In this block, we set the title of the page to "Login - Tech Blog".
+
+  block content  ...  endblock : This block is used to override the content block defined in the base.html template. In this block, we define the content of the login page.
+
+  <h1>Login</h1>: This line of code displays the heading of the login page.
+
+  <form method="POST"> ... </form>: This code defines a form with the HTTP method set to POST.
+
+   csrf_token : This is a security measure in Django to prevent Cross-Site Request Forgery (CSRF) attacks.
+
+   form.as_p : This code renders the form fields as paragraphs, with each field having its own <label> and <input> elements.
+
+  <button type="submit">Login</button>: This code creates a submit button for the form.
+
+  Overall, this code creates a login form that can be used by users to log into the Tech Blog website.
+-->

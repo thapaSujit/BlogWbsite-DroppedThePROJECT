@@ -1,49 +1,43 @@
 {% extends 'base.html' %}
 
-{% block head %}
-  <title>Signup - Tech Blog</title>
-{% endblock %}
-
 {% block content %}
-  <h1>Signup</h1>
-  <form method="POST">
+  <h2>Register</h2>
+  <form method="post">
     {% csrf_token %}
-    <div class="form-group">
-      <label for="{{ form.first_name.id_for_label }}">First Name<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your first name"></span></label>
-      <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" placeholder="First Name" required>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" name="username" required>
     </div>
-    <div class="form-group">
-      <label for="{{ form.last_name.id_for_label }}">Last Name<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your last name"></span></label>
-      <input type="text" class="form-control" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" placeholder="Last Name" required>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
     </div>
-    <div class="form-group">
-      <label for="{{ form.email.id_for_label }}">Email<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your email address"></span></label>
-      <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Email Address" required>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" required>
     </div>
-    <div class="form-group">
-      <label for="{{ form.address.id_for_label }}">Address<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your address"></span></label>
-      <input type="text" class="form-control" id="{{ form.address.id_for_label }}" name="{{ form.address.name }}" placeholder="Address">
+    <div>
+      <label for="confirm_password">Confirm Password:</label>
+      <input type="password" name="confirm_password" required>
     </div>
-    <div class="form-group">
-      <label for="{{ form.phone_number.id_for_label }}">Phone Number<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your phone number"></span></label>
-      <input type="text" class="form-control" id="{{ form.phone_number.id_for_label }}" name="{{ form.phone_number.name }}" placeholder="Phone Number">
-    </div>
-    <div class="form-group">
-      <label for="{{ form.password1.id_for_label }}">Password<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Password should contain at least 8 characters, including upper and lower case letters, numbers, and symbols."></span></label>
-      <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" placeholder="Password" required>
-    </div>
-    <div class="form-group">
-      <label for="{{ form.password2.id_for_label }}">Confirm Password<span class="info-sign" data-toggle="tooltip" data-placement="right" title="Enter your password again"></span></label>
-      <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" placeholder="Confirm Password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Signup</button>
+    <button type="submit">Register</button>
   </form>
 {% endblock %}
 
-{% block scripts %}
-  <script>
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip(); 
-    });
-  </script>
-{% endblock %}
+<!-- 
+  This template extends the base.html template and overrides the content block. Within this block, it displays a registration form for users to create a new account.
+
+  The form tag specifies that the data entered in the form will be sent to the server using the HTTP POST method.
+
+  csrf_token  is a Django template tag that inserts a hidden field in the form to prevent cross-site request forgery attacks.
+
+  <label> elements are used to associate a label with each input field. This improves the accessibility of the form for users of assistive technologies.
+
+  <input> elements are used to collect user input. The name attribute specifies the name of the input field, and the type attribute specifies the type of input (e.g. text, email, password).
+
+  <button> is used to create a button that submits the form.
+
+  required attribute is used to specify that a field must be filled out before the form can be submitted.
+
+  The name attribute of each input field corresponds to the names of the form fields expected by the server when the form is submitted.
+ -->

@@ -8,3 +8,23 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 {% endblock %}
+
+
+<!-- 
+    block content 
+    This line defines the content block that will be overridden by child templates.
+
+    extends 'base.html'
+    This line extends the base.html template, which is used as the base layout for this template.
+
+    <form method="post">
+         csrf_token 
+        form.as_p 
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    This code displays a form for creating a new article. The method="post" attribute specifies that the form should be submitted using the HTTP POST method. The {% csrf_token %} template tag adds a CSRF token to the form to prevent cross-site request forgery attacks.
+
+    form.as_p displays the form fields as paragraphs, with each label and input field enclosed in <p> tags.
+
+    The last line is a submit button that submits the form when clicked.
+-->

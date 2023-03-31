@@ -14,3 +14,23 @@
         <p>No articles to display.</p>
     {% endfor %}
 {% endblock %}
+
+<!-- 
+    This code extends the base.html template which provides a basic structure for this template to build on.
+    
+    This code overrides the content block of the base.html template. Within this block, it displays a list of articles in a card layout using Bootstrap classes.
+
+    for article in articles starts a for loop to iterate over each article in the articles queryset.
+
+    <div class="card mb-3"> creates a Bootstrap card layout for each article.
+
+    <h5 class="card-title">article.title </h5> displays the title of each article.
+
+    <p class="card-text"> article.summary </p> displays the summary of each article.
+
+    <a href="url 'article_detail' article.id " class="btn btn-primary">Read more</a> creates a button to link to the detail page of each article using the article_detail URL pattern and the article ID.
+
+    empty  checks if there are no articles to display.
+
+    <p>No articles to display.</p> displays a message when there are no articles to display.
+-->

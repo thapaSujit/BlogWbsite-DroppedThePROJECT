@@ -1,42 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Set the character encoding and the viewport for the page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load the static files -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- Load jQuery, Popper.js and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-
+    <!-- Define the title of the page in the 'head' block -->
     {% block head %}
       <title>Tech Blog</title>
-      
     {% endblock %}
   </head>
   <body>
+    <!-- Create the navbar for the page -->
     <nav class="navbar">
+      <!-- Define the navbar brand and link it to the home page -->
       <a class="navbar-brand" href="{% url 'home' %}">Tech Blog</a>
+
+      <!-- Create the navbar links -->
       <div class="navbar-links">
+        <!-- Link to the articles page -->
         <a class="nav-link" href="{% url 'articles' %}">Articles</a>
+
+        <!-- If the user is authenticated, show the 'New Article' and 'Logout' links -->
         {% if user.is_authenticated %}
           <a class="nav-link" href="{% url 'create_article' %}">New Article</a>
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+
+        <!-- If the user is not authenticated, show the 'Login' and 'Signup' links -->
         {% else %}
           <a class="nav-link" href="{% url 'login' %}">Login</a>
           <a class="nav-link" href="{% url 'signup' %}">Signup</a>
         {% endif %}
       </div>
     </nav>
+
+    <!-- Define the main content of the page in the 'content' block -->
     <main>
       {% block content %}
       {% endblock %}
     </main>
+
+    <!-- Create the footer for the page -->
     <footer>
-      <p>&copy; {{ year }} Tech Blog</
+      <!-- Display the current year and the name of the blog -->
+      <p>&copy; {{ year }} Tech Blog</p>
+    </footer>
+</html>
+
+<!-- 
+  
+meta tags define the character set and viewport for the page.
+
+load static  loads static files, like stylesheets and images.
+
+link tags import CSS stylesheets from external sources, like Bootstrap and Font Awesome.
+
+script tags import JavaScript libraries, like jQuery and Popper.js.
+
+block head and endblock  define a block that child templates can override to set the title tag.
+
+nav tags define the navbar section with a brand link and dynamic links based on whether the user is authenticated or not.
+
+url  tags dynamically generate URLs based on the name of the view.
+
+ if and else tags conditionally show different links based on whether the user is authenticated or not.
+
+main tags define the main content section of the page, which child templates can override.
+
+block content  and  endblock  define a block that child templates can override
+ -->
