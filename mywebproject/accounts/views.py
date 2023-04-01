@@ -44,14 +44,14 @@ def signup_view(request):
         # Check if passwords match
         if password != confirm_password:
             messages.error(request, 'Passwords do not match.')
-            return redirect('register')
+            return redirect('signup')
         # Check if username and email are unique
         if User.objects.filter(username=username).exists():
             messages.error(request, 'Username is already taken.')
-            return redirect('register')
+            return redirect('signup')
         if User.objects.filter(email=email).exists():
             messages.error(request, 'Email is already taken.')
-            return redirect('register')
+            return redirect('signup')
         # Create new user
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
@@ -153,4 +153,3 @@ def logout_view(request):
     """
     logout(request)
     return redirect('home')
-
